@@ -1,5 +1,5 @@
-var throttle = require('./throttle')
-var debounce = require('./debounce')
+var throttle = require('./src/throttle')
+var debounce = require('./src/debounce')
 
 /**
  * throttle and debounce
