@@ -9,17 +9,25 @@
  * @returns {Function} closure. A callback wrapper HOC
  */
 module.exports = function throttle(delay, noTrailing, callback, debounceMode) {
-    // 
+
+    // Timer`s ID
+    // Ensure callback function execute at the proper time in throttle mode.
+    // Ensure the rate is regular in throttle mode.
     var timeoutID
 
+    // Record the last timeStamp that callback was executed.
     var lastExec = 0
 
+    // noTrailing defaults to undefined
+    // use throttle like this: throttle(500, callback)
     if(typeof noTrailing === 'boolean') {
         debounceMode = callback
         callback = noTrailing
         noTrailing = undefined
     }
 
+    // core closure function. HOC function.
+    // the wrapper function will limit the rate at which callback is executed
     function wrapper() {
         var self = this
         var elapsed = Number(new Date()) - lastExec
