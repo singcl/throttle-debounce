@@ -29,15 +29,20 @@ module.exports = function throttle(delay, noTrailing, callback, debounceMode) {
     // core closure function. HOC function.
     // the wrapper function will limit the rate at which callback is executed
     function wrapper() {
+
+        // init variables
         var self = this
         var elapsed = Number(new Date()) - lastExec
         var args = arguments
 
+        // exec function that callback will be executed at last
         function exec() {
+            // update the execution time
             lastExec = Number(new Date())
             callback.apply(self, args)
         }
 
+        // 
         function clear() {
             timeoutID = undefined
         }
@@ -46,16 +51,22 @@ module.exports = function throttle(delay, noTrailing, callback, debounceMode) {
             exec()
         }
 
+        // clear the timer. then we will create a new timer instead of this.
         if(timeoutID) {
             clearTimeout(timeoutID)
         }
 
+        // throttle mode.
+        // the elapsed time gap has more then delay
         if (debounceMode === undefined && elapsed > delay) {
             exec()
         } else if (noTrailing !== true) {
+            // create a new timer instead of old.
             timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay)
         }
     }
 
+    // return the closure HOC
+    // the function will exec immediately when event has occur
     return wrapper
 }
