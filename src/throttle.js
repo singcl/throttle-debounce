@@ -67,6 +67,6 @@ module.exports = function throttle(delay, noTrailing, callback, debounceMode) {
     }
 
     // return the closure HOC
-    // the function will exec immediately when event has occur
+    // the function will exec immediately when event has occurred
     return wrapper
 }
