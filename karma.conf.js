@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Sun May 01 2016 16:50:20 GMT+0200 (CEST)
 
+var path = require('path')
+
 module.exports = function(config) {
     config.set({
   
@@ -22,23 +24,35 @@ module.exports = function(config) {
   
   
       // list of files to exclude
-      exclude: [
-      ],
+      exclude: [],
   
   
       // preprocess matching files before serving them to the browser
       // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
       preprocessors: {
-        'test/**/*.js': 'browserify'
+        'test/**/*.js': ['browserify', 'coverage']
       },
-  
+
+      // optionally, configure the reporter
+      coverageReporter: {
+        dir: path.join(__dirname, 'coverage'),
+        reporters: [
+          {type: 'html'},
+          {type: 'lcov', subdir: 'lcov'}  // lcov
+        ]
+      },
+
+      // test results reporter to use
+      // possible values: 'dots', 'progress'
+      // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+      // coverage reporter generates the coverage
+      reporters: ['progress', 'coverage'],
   
       // test results reporter to use
       // possible values: 'dots', 'progress'
       // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    //   reporters: ['mocha'],
-  
-  
+      //   reporters: ['mocha'],
+
       // web server port
       port: 9876,
   
