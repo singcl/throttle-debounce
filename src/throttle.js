@@ -20,7 +20,7 @@ module.exports = function throttle(delay, noTrailing, callback, debounceMode) {
 
     // noTrailing defaults to undefined
     // use throttle like this: throttle(500, callback)
-    if(typeof noTrailing === 'boolean') {
+    if(typeof noTrailing !== 'boolean') {
         debounceMode = callback
         callback = noTrailing
         noTrailing = undefined
