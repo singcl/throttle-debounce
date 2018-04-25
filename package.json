@@ -4,7 +4,7 @@
   "description": "throttle and debounce",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
@@ -24,11 +24,12 @@
     "browserify": "^13.0.0",
     "watchify": "^3.7.0",
     "karma": "^0.13.2",
-    "karma-browserify": "^5.0.4", 
+    "karma-browserify": "^5.0.4",
     "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "^0.1.7",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-qunit": "^0.1.9",
-    "qunitjs": "^1.23.1"
+    "qunitjs": "^1.23.1",
+    "phantomjs-prebuilt": "^2.1.7"
   }
 }
