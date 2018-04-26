@@ -1,4 +1,4 @@
-var qunit = require('qunitjs')
+var QUnit = require('qunitjs')
 var throttle = require('../src/throttle')
 
 QUnit.config.autostart = false
@@ -28,11 +28,11 @@ function execManyTimes(each, complete) {
 	setTimeout(start, pause)
 }
 
-qunit.module('throttle');
+QUnit.module('throttle');
 
-qunit.test('delay, callback', function() {
-	qunit.expect(7);
-	qunit.stop();
+QUnit.test('delay, callback', function() {
+	QUnit.expect(7);
+	QUnit.stop();
 
 	var startTime
 	var i = 0
@@ -42,7 +42,7 @@ qunit.test('delay, callback', function() {
 		}
 	var throttled = throttle(delay, fn)
 
-	qunit.equal(throttled.guid, fn.guid, 'throttled-callback and callback should have the same .guid');
+	QUnit.equal(throttled.guid, fn.guid, 'throttled-callback and callback should have the same .guid');
 
 	execManyTimes( function() {
         var now = +new Date()
@@ -56,15 +56,15 @@ qunit.test('delay, callback', function() {
 
 		setTimeout(function(){
 			//console.log( arr, arr.length, len, i );
-			qunit.ok(arr.length < i, 'callback should be executed less # of times than throttled-callback');
-			qunit.equal(arr[0], 0, 'callback should be executed immediately');
-			qunit.equal(arr.length - len, 1, 'callback should be executed one more time after finish');
+			QUnit.ok(arr.length < i, 'callback should be executed less # of times than throttled-callback');
+			QUnit.equal(arr[0], 0, 'callback should be executed immediately');
+			QUnit.equal(arr.length - len, 1, 'callback should be executed one more time after finish');
 
 			startTime = null
 			arr = []
 			i = 0
 
-			callback ? callback() : qunit.start()
+			callback ? callback() : QUnit.start()
 
 		}, delay * 2)
 	})
