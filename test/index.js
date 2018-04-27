@@ -55,7 +55,7 @@ QUnit.test('delay, callback', function() {
 		var len = arr.length
 
 		setTimeout(function(){
-			//console.log( arr, arr.length, len, i );
+			console.log( arr, arr.length, len, i );
 			QUnit.ok(arr.length < i, 'callback should be executed less # of times than throttled-callback');
 			QUnit.equal(arr[0], 0, 'callback should be executed immediately');
 			QUnit.equal(arr.length - len, 1, 'callback should be executed one more time after finish');
