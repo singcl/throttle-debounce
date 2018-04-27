@@ -30,7 +30,7 @@ function execManyTimes(each, complete) {
 
 QUnit.module('throttle');
 
-QUnit.test('delay, callback', function() {
+QUnit.test('throttle(delay, callback)', function() {
 	QUnit.expect(7);
 	QUnit.stop();
 
