@@ -22,15 +22,16 @@
   "homepage": "https://github.com/singcl/throttle-debounce#readme",
   "devDependencies": {
     "browserify": "^13.0.0",
-    "watchify": "^3.7.0",
     "karma": "^0.13.2",
     "karma-browserify": "^5.0.4",
     "karma-chrome-launcher": "^0.2.3",
-    "karma-firefox-launcher": "^0.1.7",
-    "karma-phantomjs-launcher": "^1.0.0",
     "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-mocha-reporter": "^2.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
     "karma-qunit": "^0.1.9",
+    "phantomjs-prebuilt": "^2.1.7",
     "qunitjs": "^1.23.1",
-    "phantomjs-prebuilt": "^2.1.7"
+    "watchify": "^3.7.0"
   }
 }
