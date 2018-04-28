@@ -5,6 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "karma start --single-run --browsers PhantomJS",
+    "cov": "cat ./coverage/lcov/lcov.info | coveralls",
+    "covv": "./node_modules/.bin/coveralls",
     "dev": "webpack src/index.js -o lib/bundle.js --mode development",
     "build": "webpack src/index.js -o lib/bundle.min.js --mode production"
   },
@@ -24,6 +26,7 @@
   "homepage": "https://github.com/singcl/throttle-debounce#readme",
   "devDependencies": {
     "browserify": "^13.0.0",
+    "coveralls": "^3.0.0",
     "eslint": "^4.19.1",
     "karma": "^0.13.2",
     "karma-browserify": "^5.0.4",
