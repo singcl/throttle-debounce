@@ -1,10 +1,14 @@
 var QUnit = require('qunitjs')
 var throttle = require('../src/throttle')
+var debounce = require('../src/debounce')
 
 // throttle unit test cats.
-var delayCallback = require('./throttle/delay-callback')
-var delayFalseCallback = require('./throttle/delay-false-callback')
-var delayTrueCallback = require('./throttle/delay-true-callback')
+var throttleDelayCallback = require('./throttle/delay-callback')
+var throttleDelayFalseCallback = require('./throttle/delay-false-callback')
+var throttleDelayTrueCallback = require('./throttle/delay-true-callback')
+
+// debounce unit test case.
+var debounceDelayCallback = require('./debounce/delay-callback')
 
 QUnit.config.autostart = false
 
@@ -36,6 +40,10 @@ function execManyTimes(each, complete) {
 
 QUnit.module('throttle');
 
-delayCallback(QUnit, throttle, delay, execManyTimes)
-delayFalseCallback(QUnit, throttle, delay, execManyTimes)
-delayTrueCallback(QUnit, throttle, delay, execManyTimes)
+throttleDelayCallback(QUnit, throttle, delay, execManyTimes)
+throttleDelayFalseCallback(QUnit, throttle, delay, execManyTimes)
+throttleDelayTrueCallback(QUnit, throttle, delay, execManyTimes)
+
+QUnit.module('debounce')
+
+debounceDelayCallback(QUnit, debounce, delay, execManyTimes)
