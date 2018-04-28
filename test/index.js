@@ -12,26 +12,26 @@ var pause = 500
 var delay = 100
 
 // 模拟高频率触发的动作
-function execManyTimes(each, complete, pause) {
-	var i = 0
-	var repeated
-	var id
+function execManyTimes(each, complete) {
+    var i = 0
+    var repeated
+    var id
 
-	function start() {
-		id = setInterval(function() {
-			each()
-			if (++i === 50) {
-				clearInterval(id)
-				complete(repeated ? null : function() {
-					i = 0
-					repeated = true
-					setTimeout(start, pause)
-				})
-			}
-		}, 20)
-	}
+    function start() {
+        id = setInterval(function() {
+            each()
+            if (++i === 50) {
+                clearInterval(id)
+                complete(repeated ? null : function() {
+                    i = 0
+                    repeated = true
+                    setTimeout(start, pause)
+                })
+            }
+        }, 20)
+    }
 
-	setTimeout(start, pause)
+    setTimeout(start, pause)
 }
 
 QUnit.module('throttle');

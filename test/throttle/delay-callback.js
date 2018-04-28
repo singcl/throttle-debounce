@@ -10,8 +10,8 @@ module.exports = function(QUnit, throttle, delay, execManyTimes) {
         var i = 0
         var arr = []
         var fn = function(now) {
-                arr.push(now - this)
-            }
+            arr.push(now - this)
+        }
         var throttled = throttle(delay, fn)
     
         QUnit.equal(throttled.guid, fn.guid, 'throttled-callback and callback should have the same .guid');

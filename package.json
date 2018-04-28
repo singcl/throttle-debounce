@@ -24,6 +24,7 @@
   "homepage": "https://github.com/singcl/throttle-debounce#readme",
   "devDependencies": {
     "browserify": "^13.0.0",
+    "eslint": "^4.19.1",
     "karma": "^0.13.2",
     "karma-browserify": "^5.0.4",
     "karma-chrome-launcher": "^0.2.3",
