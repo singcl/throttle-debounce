@@ -14,8 +14,8 @@ var debounceDelayTrueCallback = require('./debounce/delay-true-callback')
 
 QUnit.config.autostart = false
 
-var pause = 500
-var delay = 100
+var pause = 30
+var delay = 30
 
 // 模拟高频率触发的动作
 function execManyTimes(each, complete) {
@@ -26,7 +26,7 @@ function execManyTimes(each, complete) {
     function start() {
         id = setInterval(function() {
             each()
-            if (++i === 50) {
+            if (++i === 20) {
                 clearInterval(id)
                 complete(repeated ? null : function() {
                     i = 0
@@ -34,7 +34,7 @@ function execManyTimes(each, complete) {
                     setTimeout(start, pause)
                 })
             }
-        }, 20)
+        }, 10)
     }
 
     setTimeout(start, pause)
