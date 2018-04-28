@@ -14,6 +14,7 @@ module.exports = {
       "no-var": "off",
       "semi": "off",
       "max-len": ["error", 150],
-      "no-multi-spaces": ["error", { ignoreEOLComments: true }]
+      "no-multi-spaces": ["error", { ignoreEOLComments: true }],
+      "no-console": "off"
     }
 };
