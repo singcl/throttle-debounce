@@ -1,8 +1,8 @@
 
 module.exports = function(QUnit, debounce, delay, execManyTimes) {
 
-    // test: debounce(delay, callback)
-    QUnit.test('debounce(delay, callback)', function() {
+    // test: debounce(delay, true, callback)
+    QUnit.test('debounce(delay, true, callback)', function() {
         QUnit.expect(5);
         QUnit.stop();
     
@@ -12,7 +12,7 @@ module.exports = function(QUnit, debounce, delay, execManyTimes) {
         var fn = function() {
             arr.push(+new Date())
         }
-        var debounced = debounce(delay, fn)
+        var debounced = debounce(delay, true, fn)
     
         QUnit.equal(debounced.guid, fn.guid, 'debounced-callback and callback should have the same .guid')
     
@@ -30,7 +30,7 @@ module.exports = function(QUnit, debounce, delay, execManyTimes) {
             setTimeout(function(){
                 // console.log(arr[0] - doneTime)
                 QUnit.equal(arr.length, 1, 'callback was executed only once')
-                QUnit.ok(arr[0] >= doneTime, 'callback should be executed after the finish. the D-value is about 100')
+                QUnit.ok(arr[0] - doneTime <= 0, 'callback should be executed at the start')
     
                 startTime = null
                 arr = []

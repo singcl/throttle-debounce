@@ -1,8 +1,8 @@
 
 module.exports = function(QUnit, debounce, delay, execManyTimes) {
 
-    // test: debounce(delay, callback)
-    QUnit.test('debounce(delay, callback)', function() {
+    // test: debounce(delay, false, callback)
+    QUnit.test('debounce(delay, false, callback)', function() {
         QUnit.expect(5);
         QUnit.stop();
     
@@ -12,7 +12,7 @@ module.exports = function(QUnit, debounce, delay, execManyTimes) {
         var fn = function() {
             arr.push(+new Date())
         }
-        var debounced = debounce(delay, fn)
+        var debounced = debounce(delay, false, fn)
     
         QUnit.equal(debounced.guid, fn.guid, 'debounced-callback and callback should have the same .guid')
     

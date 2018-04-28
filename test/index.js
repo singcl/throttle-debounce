@@ -9,6 +9,8 @@ var throttleDelayTrueCallback = require('./throttle/delay-true-callback')
 
 // debounce unit test case.
 var debounceDelayCallback = require('./debounce/delay-callback')
+var debounceDelayFalseCallback = require('./debounce/delay-false-callback')
+var debounceDelayTrueCallback = require('./debounce/delay-true-callback')
 
 QUnit.config.autostart = false
 
@@ -47,3 +49,5 @@ throttleDelayTrueCallback(QUnit, throttle, delay, execManyTimes)
 QUnit.module('debounce')
 
 debounceDelayCallback(QUnit, debounce, delay, execManyTimes)
+debounceDelayFalseCallback(QUnit, debounce, delay, execManyTimes)
+debounceDelayTrueCallback(QUnit, debounce, delay, execManyTimes)
