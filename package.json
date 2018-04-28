@@ -6,7 +6,7 @@
   "scripts": {
     "test": "karma start --single-run --browsers PhantomJS",
     "dev": "webpack src/index.js -o lib/bundle.js --mode development",
-    "build": "webpack src/index.js -o lib/bundle.js --mode production"
+    "build": "webpack src/index.js -o lib/bundle.min.js --mode production"
   },
   "repository": {
     "type": "git",
