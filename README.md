@@ -1,4 +1,4 @@
-![throttle-debounce@singcl](./src/img/throttle-debounce.jpg)
+![throttle-debounce@singcl](./throttle-debounce.jpg)
 ## throttle-debounce
 
 [![Travis](https://img.shields.io/travis/singcl/throttle-debounce.svg)](https://www.travis-ci.org/singcl/throttle-debounce)
