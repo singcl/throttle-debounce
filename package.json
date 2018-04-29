@@ -7,8 +7,8 @@
     "test": "karma start --single-run --browsers PhantomJS",
     "cov": "cat ./coverage/lcov/lcov.info | coveralls",
     "covv": "./node_modules/.bin/coveralls",
-    "dev": "webpack src/index.js -o lib/bundle.js --mode development",
-    "build": "webpack src/index.js -o lib/bundle.min.js --mode production"
+    "dev": "webpack src/index.js -o lib/bundle.js --mode development --output-library-target umd",
+    "build": "webpack src/index.js -o lib/bundle.min.js --mode production --output-library-target umd"
   },
   "repository": {
     "type": "git",
