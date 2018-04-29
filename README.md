@@ -7,23 +7,27 @@
 
 Throttle/debounce your functions.
 
-## 安装
+## 基本用法
+
+- 使用方法一：UMD方式。lib 目录下是用webpack4.x打包的UMD模块，参照UMD模块的使用方法。
+- 使用方法二：作为项目的依赖配合打包工具使用。
 ```sh
 npm i @singcl/throttle-debounce --save
 ```
-## 基本用法
-
 ```js
+// 基本用法示例
 var throttle = require('@singcl/throttle-debounce/throttle')
 var debounce = require('@singcl/throttle-debounce/debounce')
 
-throttle(500, function() {
+var throttled = throttle(500, function() {
 	// 该函数为需要节流的目标函数
 })
 
-debounce(500, function() {
+var debounced = debounce(500, function() {
 	// 该函数为需要去抖的目标函数
 })
+
+// throttled 和 debounced 就是我们最终需要的函数。
 ```
 ## API
 
