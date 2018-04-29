@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>throttle(delay, callback)测试</title>
+    <title>debounce(delay, callback)测试</title>
 </head>
-<body onscroll="throttled(event)">
-    <div style="height: 10000px;">throttle(delay, callback)测试</div>
+<body>
+    <h3>debounce(delay, callback)测试</h3>
+    <input type="text" oninput="debounced(event)">
 </body>
 <script src="./lib/bundle.min.js"></script>
 <script>
-    var throttled = throttle(800, function scrollTest(e) {
+    var debounced = debounce(800, true, function scrollTest(e) {
         console.log(e, '正在滚动...')
     })
 </script>
