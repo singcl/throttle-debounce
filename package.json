@@ -1,7 +1,7 @@
 {
   "name": "@singcl/throttle-debounce",
-  "version": "1.0.0",
-  "description": "throttle and debounce",
+  "version": "1.0.1",
+  "description": "throttle and debounce in browaser or building with module bundler",
   "main": "src/index.js",
   "scripts": {
     "test": "karma start --single-run --browsers PhantomJS",
@@ -16,7 +16,9 @@
   },
   "keywords": [
     "throttle",
-    "debounce"
+    "debounce",
+    "browser",
+    "module"
   ],
   "author": "singcl",
   "license": "MIT",
