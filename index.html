@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>throttle(delay, callback)测试</title>
+</head>
+<body onscroll="throttled(event)">
+    <div style="height: 10000px;">throttle(delay, callback)测试</div>
+</body>
+<script src="./lib/bundle.min.js"></script>
+<script>
+    var throttled = throttle(800, function scrollTest(e) {
+        console.log(e, '正在滚动...')
+    })
+</script>
+</html>
