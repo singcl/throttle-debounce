@@ -2,13 +2,13 @@
   "name": "@singcl/throttle-debounce",
   "version": "1.0.1",
   "description": "throttle and debounce in browaser or building with module bundler",
-  "main": "src/index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "karma start --single-run --browsers PhantomJS",
     "cov": "cat ./coverage/lcov/lcov.info | coveralls",
     "covv": "./node_modules/.bin/coveralls",
-    "dev": "webpack src/index.js -o lib/bundle.js --mode development --output-library-target umd",
-    "build": "webpack src/index.js -o lib/bundle.min.js --mode production --output-library-target umd"
+    "dev": "webpack ./index.js -o lib/bundle.js --mode development --output-library-target umd",
+    "build": "webpack ./index.js -o lib/bundle.min.js --mode production --output-library-target umd"
   },
   "repository": {
     "type": "git",
