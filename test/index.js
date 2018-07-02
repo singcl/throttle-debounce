@@ -1,6 +1,6 @@
 var QUnit = require('qunitjs')
-var throttle = require('../src/throttle')
-var debounce = require('../src/debounce')
+var throttle = require('../throttle')
+var debounce = require('../debounce')
 
 // throttle unit test cats.
 var throttleDelayCallback = require('./throttle/delay-callback')
